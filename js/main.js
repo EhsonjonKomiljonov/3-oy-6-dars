@@ -36,9 +36,13 @@ var euroForSum = 11686;
 var dolar = (forTicket + forHotel) * dolarForSum;
 var euro = forMuseum * euroForSum;
 var cost = dolar + euro;
-var money = prompt("O'zingizda bor summani yozing");
-if (money >= cost ) {
+var money = +prompt("O'zingizda bor summani yozing");
+if (money >= cost) {
   elTitle.textContent = "Oq yo'l Alisher";
+} else if (money < 0) {
+  elTitle.textContent = "Alisher aka To'gri qiymat kiriting";
+} else if (isNaN(money)) {
+  elTitle.textContent = "Alisher aka, son kiriting";
 } else {
   elTitle.textContent = "Alisher ozgina sabr qilish kerak bo'lar ekan";
 }
